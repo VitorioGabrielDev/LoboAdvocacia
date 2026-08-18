@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Lobo.Api/Lobo.Api.csproj" />
+  <Project Path="Lobo.Application/Lobo.Application.csproj" />
+  <Project Path="Lobo.Domain/Lobo.Domain.csproj" />
+  <Project Path="Lobo.Infrastructure/Lobo.Infrastructure.csproj" />
+</Solution>
