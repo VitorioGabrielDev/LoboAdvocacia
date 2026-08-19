@@ -1,6 +1,7 @@
-using Lobo.Domain.SharedContext.Enums;
+using Lobo.Domain.ProcessContext.Enums;
+using Lobo.Domain.SharedContext.Entities;
 
-namespace Lobo.Domain.SharedContext.Entities;
+namespace Lobo.Domain.ProcessContext;
 
 public class Process : Entity
 {
@@ -9,17 +10,15 @@ public class Process : Entity
     public DateTime ProtocolDate { get; private set; }
     public string Action { get; private set; } = string.Empty;
     public int ChildProcessId { get; private set; }
-    public List<Todo> Todos { get; private set; } = new();
     
     private Process() { }
 
-    public Process(int customerId, ProcessStatus status, DateTime protocolDate, string action, int childProcessId, List<Todo> todos)
+    public Process(int customerId, ProcessStatus status, DateTime protocolDate, string action, int childProcessId)
     {
         CustomerId = customerId;
         Status = status;
         ProtocolDate = protocolDate;
         Action = action;
         ChildProcessId = childProcessId;
-        Todos = todos;
     }
 }

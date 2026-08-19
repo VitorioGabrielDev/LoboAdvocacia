@@ -9,6 +9,10 @@
     <PackageReference Include="IuriDev26.Mediator.Abstractions" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ProcessContext\UseCases\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

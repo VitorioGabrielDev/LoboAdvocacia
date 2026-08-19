@@ -1,12 +1,12 @@
-using Lobo.Application.SharedContext.UseCases;
-
-namespace AffordIt.Application.SharedContext.UseCases;
+namespace Lobo.Application.SharedContext.UseCases;
 
 public class Result<T>
 {
     public bool IsSuccess { get; private set; }
     public T? Data { get; private set; }
     public List<Error> Errors { get; } = [];
+    
+    public Result() { }
     
     public Result(T data)
     {
@@ -25,7 +25,15 @@ public class Result<T>
         IsSuccess = false;
         Errors.Add(error);
     }
-
+    
+    public void SetData(T? data)
+    {
+        IsSuccess = data != null;
+        Data = data;
+    }
+    
+    public void AddError(string error) => Errors.Add(Error.ValidationError(error));
+    
     public static Result<T> Success(T data) => new (data);
     public static Result<T> Failure(Error error) => new (error);
     public static Result<T> Failure(List<Error> errors) => new (errors);

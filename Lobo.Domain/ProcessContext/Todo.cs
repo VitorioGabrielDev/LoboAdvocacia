@@ -1,4 +1,6 @@
-namespace Lobo.Domain.SharedContext.Entities;
+using Lobo.Domain.SharedContext.Entities;
+
+namespace Lobo.Domain.ProcessContext;
 
 public class Todo : Entity
 {
