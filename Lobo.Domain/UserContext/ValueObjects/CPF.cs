@@ -1,20 +1,24 @@
 using System.Text.RegularExpressions;
 using Flunt.Validations;
 using Lobo.Domain.SharedContext.Exceptions;
+using Lobo.Domain.SharedContext.ValueObjects;
 using Lobo.Domain.UserContext.Exceptions;
 
 namespace Lobo.Domain.UserContext.ValueObjects;
 
-public partial record CPF
+public partial record CPF : ValueObject
 {
     public string Value { get; }
+    
+    public static implicit operator string(CPF cpf) => cpf.Value;
 
-    public CPF()
+    public CPF(string cpf)
     {
-        
+        EnsureCPFIsValid(cpf);
+        Value = cpf;
     }
     
-    public static bool Validate(string cpf)
+    private static void EnsureCPFIsValid(string cpf)
     {
         if (string.IsNullOrWhiteSpace(cpf))
             throw new InvalidCPFException("CPF é obrigatório");
@@ -22,10 +26,10 @@ public partial record CPF
         cpf = CPFRegex().Replace(cpf, "");
         
         if (cpf.Length != 11)
-            return false;
+            throw new InvalidCPFException("O CPF deve possuir 11 caracteres");
         
         if (cpf.Distinct().Count() == 1)
-            return false;
+            throw new InvalidCPFException("O CPF não pode ser formado por apenas um dígito.");
         
         int[] multiplier1 = [10, 9, 8, 7, 6, 5, 4, 3, 2];
         string tempCpf = cpf.Substring(0, 9);
@@ -50,8 +54,9 @@ public partial record CPF
         remainder = (remainder < 2) ? 0 : 11 - remainder;
 
         digit += remainder.ToString();
-        
-        return cpf.EndsWith(digit);
+
+        if (!cpf.EndsWith(digit))
+            throw new InvalidCPFException("O CPF informado é inválido.");
     }
 
     [GeneratedRegex("[^0-9]")]

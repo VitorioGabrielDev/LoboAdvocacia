@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Tests/">
+    <Project Path="Lobo.Domain.Tests/Lobo.Domain.Tests.csproj" />
+  </Folder>
   <Project Path="Lobo.Api/Lobo.Api.csproj" />
   <Project Path="Lobo.Application/Lobo.Application.csproj" />
   <Project Path="Lobo.Domain/Lobo.Domain.csproj" />
