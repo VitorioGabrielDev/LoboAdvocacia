@@ -6,10 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Flunt" Version="2.0.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="SharedContext\UseCases\" />
+    <PackageReference Include="IuriDev26.Mediator.Abstractions" Version="1.0.1" />
   </ItemGroup>
 
   <PropertyGroup>
