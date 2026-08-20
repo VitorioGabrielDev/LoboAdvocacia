@@ -1,9 +1,10 @@
+using Lobo.Domain.SharedContext.Entities;
 using Lobo.Domain.UserContext.Exceptions.Name;
 using Lobo.Domain.UserContext.ValueObjects;
 
 namespace Lobo.Domain.UserContext.Entities;
 
-public class User
+public class User : Entity
 {
     public string Name { get; private set; } = string.Empty;
     public CPF CPF { get; private set; } = null!;

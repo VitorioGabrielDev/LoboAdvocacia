@@ -12,7 +12,7 @@ public partial record Password : ValueObject
     public string Hash { get; } = string.Empty;
 
     private const string Regex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}$";
-    private readonly PasswordHashingConfiguration _configuration;
+    private readonly PasswordHashingConfiguration _configuration = null!;
 
     private Password(){ }
     
