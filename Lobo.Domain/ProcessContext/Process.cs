@@ -21,4 +21,13 @@ public class Process : Entity
         Action = action;
         ChildProcessId = childProcessId;
     }
+
+    public void Update(int customerId, ProcessStatus status, DateTime protocolDate, string action, int childProcessId)
+    {
+        CustomerId = customerId;
+        Status = status;
+        ProtocolDate = protocolDate;
+        Action = action;
+        ChildProcessId = childProcessId;
+    }
 }

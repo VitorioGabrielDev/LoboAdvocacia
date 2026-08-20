@@ -9,15 +9,6 @@
     <PackageReference Include="IuriDev26.Mediator.Abstractions" Version="1.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ProcessContext\UseCases\CreateProcess\" />
-    <Folder Include="ProcessContext\UseCases\DeleteProcess\" />
-    <Folder Include="ProcessContext\UseCases\DeleteTodo\" />
-    <Folder Include="ProcessContext\UseCases\GetProcessesByCustomerId\" />
-    <Folder Include="ProcessContext\UseCases\GetTodosByProcessId\" />
-    <Folder Include="ProcessContext\UseCases\UpdateProcess\" />
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
