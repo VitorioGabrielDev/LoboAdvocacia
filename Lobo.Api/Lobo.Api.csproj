@@ -20,4 +20,8 @@
     <ProjectReference Include="..\Lobo.Infrastructure\Lobo.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ProcessContext\" />
+  </ItemGroup>
+
 </Project>

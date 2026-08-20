@@ -1,5 +1,6 @@
-using Lobo.Infrastructure.SharedContext.DataAccess;
+using Lobo.Api.SharedContext;
 using Microsoft.EntityFrameworkCore;
+using Lobo.Infrastructure.SharedContext.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
-var app = builder.Build();
+WebApplication app = builder.Build();
+app.MapEndpoints();
+
 app.UseHttpsRedirection();
 app.Run();
