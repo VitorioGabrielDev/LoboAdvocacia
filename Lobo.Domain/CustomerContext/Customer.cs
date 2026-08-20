@@ -23,7 +23,19 @@ public class Customer : Entity
         Email = email;
         ContactPhone = contactPhone;
         Neighborhood = neighborhood;
-        City = neighborhood;
-        State = neighborhood;
+        City = city;
+        State = state;
+    }
+
+    public void Update(string firstName, string fullName, string nationalId, string email, string contactPhone, string neighborhood, string city, string state)
+    {
+        FirstName = firstName;
+        FullName = fullName;
+        NationalId = nationalId;
+        Email = email;
+        ContactPhone = contactPhone;
+        Neighborhood = neighborhood;
+        City = city;
+        State = state;
     }
 }

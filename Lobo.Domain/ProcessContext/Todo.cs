@@ -11,11 +11,18 @@ public class Todo : Entity
     
     private Todo() { }
 
-    public Todo(int processId, string title, string description, bool completed)
+    public Todo(int processId, string title, string description)
     {
         ProcessId = processId;
         Title = title;
         Description = description;
-        Completed = completed;
+        Completed = false;
+    }
+
+    public void Update(int processId, string title, string description)
+    {
+        ProcessId = processId;
+        Title = title;
+        Description = description;
     }
 }

@@ -10,7 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ProcessContext\UseCases\" />
+    <Folder Include="ProcessContext\UseCases\CreateProcess\" />
+    <Folder Include="ProcessContext\UseCases\DeleteProcess\" />
+    <Folder Include="ProcessContext\UseCases\DeleteTodo\" />
+    <Folder Include="ProcessContext\UseCases\GetProcessesByCustomerId\" />
+    <Folder Include="ProcessContext\UseCases\GetTodosByProcessId\" />
+    <Folder Include="ProcessContext\UseCases\UpdateProcess\" />
   </ItemGroup>
 
   <PropertyGroup>

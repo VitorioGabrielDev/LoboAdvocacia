@@ -12,8 +12,8 @@ public class ProcessRepository(
     public async Task<Process?> GetProcessByIdAsync(int id) =>
         await dbContext.Processes.FirstOrDefaultAsync(x => x.Id == id);
 
-    public async Task<Process?> GetProcessByCustomerIdAsync(int customerId) =>
-        await dbContext.Processes.FirstOrDefaultAsync(x => x.CustomerId == customerId);
+    public async Task<List<Process>> GetProcessesByCustomerIdAsync(int customerId) =>
+        await dbContext.Processes.Where(x => x.CustomerId == customerId).ToListAsync();
 
     public async Task CreateProcessAsync(Process process) =>
         await dbContext.Processes.AddAsync(process);
